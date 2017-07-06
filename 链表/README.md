@@ -20,8 +20,8 @@ pCur指向下一次要反转的节点
 3 dummy.next = pCur;
 4 pCur = prev.next;
 ```
-!(单链表反转1.png)
-!(单链表反转2.png)
+![](单链表反转1.png)
+![](单链表反转2.png)
 #新建链表，遍历旧链表，将旧链表的每个节点分别插入头结点后面
 ```
 public ListNode reverseList2(ListNode head) {
