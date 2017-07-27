@@ -1,6 +1,7 @@
 ![](排序.png)
 # 快速排序
 http://blog.csdn.net/morewindows/article/details/6684558
+
 该方法的基本思想是：
 1．先从数列中取出一个数作为基准数。
 2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。
@@ -36,8 +37,10 @@ http://blog.csdn.net/morewindows/article/details/6684558
 ```
 # 归并排序
 http://blog.csdn.net/morewindows/article/details/6678165/
+
 # shell排序
 http://blog.csdn.net/jianyuerensheng/article/details/51258460
+
 代码和直接插入代码比对
 ```
 直接插入
