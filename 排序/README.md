@@ -1,5 +1,11 @@
 ![](排序.png)
-# 快速排序
+
+[快速排序](#page1)
+[归并排序](#page2)
+[shell排序](#page3)
+[基数排序](#page4)
+[堆排序](#page5)
+# <h2 id="page1">快速排序</h2>
 http://blog.csdn.net/morewindows/article/details/6684558
 
 该方法的基本思想是：
@@ -35,10 +41,12 @@ http://blog.csdn.net/morewindows/article/details/6684558
   
     return i; 
 ```
-# 归并排序
+# <h2 id="page2">归并排序</h2>
+
 http://blog.csdn.net/morewindows/article/details/6678165/
 
-# shell排序
+# <h2 id="page3">shell排序</h2>
+
 http://blog.csdn.net/jianyuerensheng/article/details/51258460
 
 代码和直接插入代码比对
@@ -75,7 +83,8 @@ shell排序
 
 
 ```
-# 基数排序
+# <h2 id="page4">基数排序</h2>
+
 https://baike.baidu.com/item/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/7875498?fr=aladdin
 ```
 每位可能的取值情况为0-9  建立十个队列
@@ -101,11 +110,13 @@ List<ArrayList> queue=new ArrayList<>();
 					a[count]=(int) temp.get(0);
 					temp.remove(0);
 					count++;
-				}
-				
+				}				
+
 ```
-# 堆排序
+# <h2 id="page5">堆排序</h2>
+
 http://blog.csdn.net/morewindows/article/details/6709644/
+
 首先参考堆的插入操作
 ```
 void MinHeapFixup(int a[], int i)  
@@ -128,6 +139,7 @@ void MinHeapFixup(int a[], int i)
 
 ```
 堆排序
+
 第一次将A[0]与A[n - 1]交换，再对A[0…n-2]重新恢复堆。第二次将A[0]与A[n  2]交换，再对A[0…n - 3]重新恢复堆，重复这样的操作直到A[0]与A[1]交换。
 ```
 public static int[] duiSort(int[] a){
