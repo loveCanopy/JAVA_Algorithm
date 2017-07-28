@@ -75,6 +75,95 @@ shell排序
 
 
 ```
+# 基数排序
+https://baike.baidu.com/item/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/7875498?fr=aladdin
+```
+每位可能的取值情况为0-9  建立十个队列
+List<ArrayList> queue=new ArrayList<>();
+		for(int i=0;i<10;i++){
+			ArrayList<Integer> queue_1=new ArrayList<>();
+			queue.add(queue_1);
+		}
+
+//分配
+		for(int i=0;i<times;i++){
+			for(int j=0;j<a.length;j++){
+				int num=a[j]%(int)Math.pow(10, i+1)/(int)Math.pow(10, i);
+				ArrayList queue_2=queue.get(num);
+				queue_2.add(a[j]);
+				queue.set(num, queue_2);
+			}
+			
+			int count=0;
+			for(int j=0;j<10;j++){
+				while(queue.get(j).size()>0){
+					ArrayList temp=queue.get(j);
+					a[count]=(int) temp.get(0);
+					temp.remove(0);
+					count++;
+				}
+				
+```
+# 堆排序
+http://blog.csdn.net/morewindows/article/details/6709644/
+首先参考堆的插入操作
+```
+void MinHeapFixup(int a[], int i)  
+	{  
+	    int j, temp;  
+	    temp = a[i];  
+	    j = (i - 1) / 2;      //父结点  
+	    while (j >= 0 && i != 0)  
+	    {  
+	        if (a[j] <= temp)  
+	            break;  
+	          
+	        a[i] = a[j];     //把较大的子结点往下移动,替换它的子结点  
+	        i = j;  
+	        j = (i - 1) / 2;  
+	    }  
+	    a[i] = temp;  
+	}  
 
 
+```
+堆排序
+第一次将A[0]与A[n - 1]交换，再对A[0…n-2]重新恢复堆。第二次将A[0]与A[n  2]交换，再对A[0…n - 3]重新恢复堆，重复这样的操作直到A[0]与A[1]交换。
+```
+public static int[] duiSort(int[] a){
+		for(int i=a.length-1;i>0;i--){
+			Swap(a[i],a[0]);
+			minHeapFix(a, 0, i);
+		}
+		return a;
+	}
+	public static void Swap(int a,int b){
+		int temp=a;
+		a=b;
+		b=temp;
+	}
+	
+	//i为待调整的第i个节点  n为节点总数       在左右节点中找最小的  和父节点对换
+	public static void minHeapFix(int[]a ,int i,int n){
+		int j, temp;  
+	    temp = a[i];  
+	    j = 2 * i + 1;  
+	    while (j < n)  
+	    {  
+	        if (j + 1 < n && a[j + 1] < a[j]) //在左右孩子中找最小的  
+	            j++;  
+	  
+	        if (a[j] >= temp)  
+	            break;  
+	  
+	        a[i] = a[j];     //把较小的子结点往上移动,替换它的父结点  
+	        i = j;  
+	        j = 2 * i + 1;  
+	    }  
+	    a[i] = temp;  
+		
+		
+	}
 
+
+```
