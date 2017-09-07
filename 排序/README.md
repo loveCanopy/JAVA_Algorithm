@@ -38,8 +38,9 @@ http://blog.csdn.net/morewindows/article/details/6684558
     }  
     //退出时，i等于j。将x填到这个坑中。  
     s[i] = x;  
-  
-    return i; 
+      quick_sort(s, l, i - 1); // 递归调用   
+        quick_sort(s, i + 1, r);
+   
 ```
 # <h2 id="page2">归并排序</h2>
 
